@@ -7,18 +7,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/bfhl")
 public class BfhlController {
 
     @Autowired
     private BfhlService bfhlService;
 
-    @PostMapping
+    @PostMapping("/bfhl")
     public BfhlResponse processData(@RequestBody BfhlRequest request) {
 
         return bfhlService.processData(request);
 
     }
+
     @GetMapping("/health")
     public String healthCheck() {
 
