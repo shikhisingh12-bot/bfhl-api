@@ -14,15 +14,16 @@ public class BfhlController {
 
     @PostMapping("/bfhl")
     public BfhlResponse processData(@RequestBody BfhlRequest request) {
-
         return bfhlService.processData(request);
+    }
 
+    @GetMapping("/bfhl")
+    public String bfhlInfo() {
+        return "BFHL API is running. Use POST method with JSON body.";
     }
 
     @GetMapping("/health")
     public String healthCheck() {
-
         return "API is working";
-
     }
 }
